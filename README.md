@@ -6,7 +6,7 @@ Implementations in plain vanilla C++ of Donald Knuth's Dancing Links
 algorith for Samurai Sudoku, Hexadoku, Dodeka Sudoku and Sudoku. I
 investigated the use of smart pointers for the links, but decided as
 it works just fine with raw pointers to leave it. I have made no
-attempt to track and release the use of memory by the algorith as the
+attempt to track and release the use of memory by the algorithm as the
 programs just exit and release it all anyway.
 
 ## Samurai Sudoku
