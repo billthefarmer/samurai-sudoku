@@ -1,0 +1,44 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//   Hexadoku.h  1.0  26 May 2006
+//
+//   Hexadoku - solve Hexadoku puzzles using Dancing Links algorithm by
+//   Donald Knuth. See academic paper 'Dancing Links', Donald
+//   E. Knuth, Stanford University.
+//
+//   Copyright (C) 2006 Bill Farmer
+//
+///////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Define constants for the dimensions of the puzzle.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+enum
+    {PUZZLE_SIDE = 16,
+     SQUARE_SIDE = 4,
+     PUZZLE_SIZE = 256,
+     COLUMN_SIZE = 1024};
+
+#include "ResultListener.h"
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//   Class Hexadoku defines some puzzles from the Times or Sunday Times
+//   and solves them.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+class Hexadoku: public ResultListener
+{
+public:
+    Hexadoku(int){};
+    ~Hexadoku(){};
+
+    void solve(int[PUZZLE_SIDE][PUZZLE_SIDE]);
+    void onResult(int[PUZZLE_SIDE][PUZZLE_SIDE]);
+};

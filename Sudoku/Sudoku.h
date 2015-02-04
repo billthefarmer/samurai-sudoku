@@ -1,0 +1,44 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//   Sudoku.h  1.0  26 May 2006
+//
+//   Sudoku - solve Sudoku puzzles using Dancing Links algorithm by
+//   Donald Knuth. See academic paper 'Dancing Links', Donald
+//   E. Knuth, Stanford University.
+//
+//   Copyright (C) 2006 Bill Farmer
+//
+///////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Define constants for the dimensions of the puzzle.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+enum
+    {PUZZLE_SIDE = 9,
+     SQUARE_SIDE = 3,
+     PUZZLE_SIZE = 81,
+     COLUMN_SIZE = 324};
+
+#include "ResultListener.h"
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//   Class Sudoku defines some puzzles from the Times or Sunday Times
+//   and solves them.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+class Sudoku: public ResultListener
+{
+public:
+    Sudoku(int){};
+    ~Sudoku(){};
+
+    void solve(int[PUZZLE_SIDE][PUZZLE_SIDE]);
+    void onResult(int[PUZZLE_SIDE][PUZZLE_SIDE]);
+};
