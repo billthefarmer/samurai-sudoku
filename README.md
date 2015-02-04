@@ -33,6 +33,7 @@ puzzles.
 
 The implementation I did in Java some years ago works just fine,
 this one crashes:
+
 	Program received signal SIGSEGV, Segmentation fault.
 	0x004026d4 in Column::cover (this=0x8c2cf0) at DancingLinks.cpp:420
 	420		    j->c->s--;
@@ -41,4 +42,5 @@ this one crashes:
 	(gdb) print j->c
 	$2 = (Column *) 0x0
 	(gdb) 
+
 It's found a node with a null column while building the matrix.
