@@ -53,5 +53,5 @@ public:
     ~Samurai(){};
 
     void solve(int[PUZZLE_SIDE][PUZZLE_SIDE]);
-    void onResult( int[PUZZLE_SIDE][PUZZLE_SIDE]);
+    void onResult(int[PUZZLE_SIDE][PUZZLE_SIDE]);
 };

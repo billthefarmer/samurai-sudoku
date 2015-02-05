@@ -44,7 +44,7 @@ public:
     Column *h;
     Node *o[PUZZLE_SIZE];
 
-    DancingLinks(int[PUZZLE_SIDE][PUZZLE_SIDE]);
+    DancingLinks(const int[PUZZLE_SIDE][PUZZLE_SIDE]);
     ~DancingLinks(){};
 
     void report(int[]);

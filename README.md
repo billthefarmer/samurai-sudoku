@@ -51,36 +51,40 @@ It's found a node with a null column while building the matrix.
 Hexadoku puzzles use the digits 0-9,A-F in a 16x16 grid. The squares
 are 4x4.
 
-	| |6| |1| | | | |B| | |2| |4| | |
-	|0| | | |3| |E|A| |D| | | |C| | |
-	|5| | | |8| | | | | | | | | |7|D|
-	| |2|9| | | | |0| | |6| | | | |1|
-	| |9| | |B| | |3|5| | | | | |1| |
-	|4|C|7|A|D| | |E| |3| | | | | |9|
-	|3|E|1| | |8| |C|D| |2| |4| | |7|
-	| |F| |8|5| |0| | | | | | | | | |
-	| | | | | | |D| | | | |6| | |0|8|
-	| |8|F| |E|4| |6| | |3|9| | | | |
-	| | | |7|1| | | |F|E| |D| | | |C|
-	|6| | | | |0|C| |2|4|5| | | |E|3|
-	| | | | | |C| |1|A| | | | | |2| |
-	|D| | | | | |3|9| | |B| | |1| | |
-	| |4| |6|A| | | |E|5|1| | | |3| |
-	|F| |A|C|6| |B|7| |9| | | | | |0|
+<table>
+<tr><td> </td><td>6</td><td> </td><td>1</td><td> </td><td> </td><td> </td><td> </td><td>B</td><td> </td><td> </td><td>2</td><td> </td><td>4</td><td> </td><td> </td></tr>
+<tr><td>0</td><td> </td><td> </td><td> </td><td>3</td><td> </td><td>E</td><td>A</td><td> </td><td>D</td><td> </td><td> </td><td> </td><td>C</td><td> </td><td> </td></tr>
+<tr><td>5</td><td> </td><td> </td><td> </td><td>8</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>7</td><td>D</td></tr>
+<tr><td> </td><td>2</td><td>9</td><td> </td><td> </td><td> </td><td> </td><td>0</td><td> </td><td> </td><td>6</td><td> </td><td> </td><td> </td><td> </td><td>1</td></tr>
+<tr><td> </td><td>9</td><td> </td><td> </td><td>B</td><td> </td><td> </td><td>3</td><td>5</td><td> </td><td> </td><td> </td><td> </td><td> </td><td>1</td><td> </td></tr>
+<tr><td>4</td><td>C</td><td>7</td><td>A</td><td>D</td><td> </td><td> </td><td>E</td><td> </td><td>3</td><td> </td><td> </td><td> </td><td> </td><td> </td><td>9</td></tr>
+<tr><td>3</td><td>E</td><td>1</td><td> </td><td> </td><td>8</td><td> </td><td>C</td><td>D</td><td> </td><td>2</td><td> </td><td>4</td><td> </td><td> </td><td>7</td></tr>
+<tr><td> </td><td>F</td><td> </td><td>8</td><td>5</td><td> </td><td>0</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>D</td><td> </td><td> </td><td> </td><td> </td><td>6</td><td> </td><td> </td><td>0</td><td>8</td></tr>
+<tr><td> </td><td>8</td><td>F</td><td> </td><td>E</td><td>4</td><td> </td><td>6</td><td> </td><td> </td><td>3</td><td>9</td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td> </td><td> </td><td> </td><td>7</td><td>1</td><td> </td><td> </td><td> </td><td>F</td><td>E</td><td> </td><td>D</td><td> </td><td> </td><td> </td><td>C</td></tr>
+<tr><td>6</td><td> </td><td> </td><td> </td><td> </td><td>0</td><td>C</td><td> </td><td>2</td><td>4</td><td>5</td><td> </td><td> </td><td> </td><td>E</td><td>3</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td> </td><td>C</td><td> </td><td>1</td><td>A</td><td> </td><td> </td><td> </td><td> </td><td> </td><td>2</td><td> </td></tr>
+<tr><td>D</td><td> </td><td> </td><td> </td><td> </td><td> </td><td>3</td><td>9</td><td> </td><td> </td><td>B</td><td> </td><td> </td><td>1</td><td> </td><td> </td></tr>
+<tr><td> </td><td>4</td><td> </td><td>6</td><td>A</td><td> </td><td> </td><td> </td><td>E</td><td>5</td><td>1</td><td> </td><td> </td><td> </td><td>3</td><td> </td></tr>
+<tr><td>F</td><td> </td><td>A</td><td>C</td><td>6</td><td> </td><td>B</td><td>7</td><td> </td><td>9</td><td> </td><td> </td><td> </td><td> </td><td> </td><td>0</td></tr>
+</table>
 
 ## Dodeka Sudoku
 Dodeka Sudoku puzzles use the digits 0-9,A-B in a 12x12 grid. The squares
 are 4x3.
 
-	| |0| | | | |8| |7| |3| |
-	| | | |9| | | | |5|4| | |
-	| | | | |B|4| | | | |9|0|
-	| |2|5| |3| |4| | |1| | |
-	|0| |6| | | | | | | |A| |
-	| | | |4|5| |9| |6| | |8|
-	|7| | |0| |2| |B|A| | | |
-	| |A| | | | | | | |7| |4|
-	| | |B| | |1| |9| |8|2| |
-	|A|3| | | | |B|6| | | | |
-	| | |4|7| | | | |8| | | |
-	| |B| |5| |3| | | | |6| |
+<table>
+<tr><td> </td><td>0</td><td> </td><td> </td><td> </td><td> </td><td>8</td><td> </td><td>7</td><td> </td><td>3</td><td> </td></tr>
+<tr><td> </td><td> </td><td> </td><td>9</td><td> </td><td> </td><td> </td><td> </td><td>5</td><td>4</td><td> </td><td> </td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>B</td><td>4</td><td> </td><td> </td><td> </td><td> </td><td>9</td><td>0</td></tr>
+<tr><td> </td><td>2</td><td>5</td><td> </td><td>3</td><td> </td><td>4</td><td> </td><td> </td><td>1</td><td> </td><td> </td></tr>
+<tr><td>0</td><td> </td><td>6</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>A</td><td> </td></tr>
+<tr><td> </td><td> </td><td> </td><td>4</td><td>5</td><td> </td><td>9</td><td> </td><td>6</td><td> </td><td> </td><td>8</td></tr>
+<tr><td>7</td><td> </td><td> </td><td>0</td><td> </td><td>2</td><td> </td><td>B</td><td>A</td><td> </td><td> </td><td> </td></tr>
+<tr><td> </td><td>A</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>7</td><td> </td><td>4</td></tr>
+<tr><td> </td><td> </td><td>B</td><td> </td><td> </td><td>1</td><td> </td><td>9</td><td> </td><td>8</td><td>2</td><td> </td></tr>
+<tr><td>A</td><td>3</td><td> </td><td> </td><td> </td><td> </td><td>B</td><td>6</td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td> </td><td> </td><td>4</td><td>7</td><td> </td><td> </td><td> </td><td> </td><td>8</td><td> </td><td> </td><td> </td></tr>
+<tr><td> </td><td>B</td><td> </td><td>5</td><td> </td><td>3</td><td> </td><td> </td><td> </td><td> </td><td>6</td><td> </td></tr>
+</table>
