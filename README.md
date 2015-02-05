@@ -51,10 +51,6 @@ It's found a node with a null column while building the matrix.
 Hexadoku puzzles use the digits 0-9,A-F in a 16x16 grid. The squares
 are 4x4.
 
-<style>
-td {padding: 0 7px;}
-table td {border: 2px solid black}
-</style>
 <table>
 <tr><td> </td><td>6</td><td> </td><td>1</td><td> </td><td> </td><td> </td><td> </td><td>B</td><td> </td><td> </td><td>2</td><td> </td><td>4</td><td> </td><td> </td></tr>
 <tr><td>0</td><td> </td><td> </td><td> </td><td>3</td><td> </td><td>E</td><td>A</td><td> </td><td>D</td><td> </td><td> </td><td> </td><td>C</td><td> </td><td> </td></tr>
