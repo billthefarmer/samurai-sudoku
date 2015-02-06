@@ -38,7 +38,7 @@ this one crashes:
 
 	Program received signal SIGSEGV, Segmentation fault.
 	0x004026d4 in Column::cover (this=0x8c2cf0) at DancingLinks.cpp:420
-	420		    j->c->s--;
+	432		    j->c->s--;
 	(gdb) print j
 	$1 = (Node *) 0x8c2f68
 	(gdb) print j->c
