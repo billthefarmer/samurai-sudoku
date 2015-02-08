@@ -33,20 +33,6 @@ The slots in the four squares labelled A, B, C, D that overlap the
 centre and outer four puzzles must be solved for both puzzles. These
 puzzles acan be found [here](http://samurai-sudoku.com).
 
-The implementation I did in Java some years ago works just fine,
-this one crashes:
-
-	Program received signal SIGSEGV, Segmentation fault.
-	0x004026d4 in Column::cover (this=0x8c2cf0) at DancingLinks.cpp:420
-	432		    j->c->s--;
-	(gdb) print j
-	$1 = (Node *) 0x8c2f68
-	(gdb) print j->c
-	$2 = (Column *) 0x0
-	(gdb) 
-
-It's found a node with a null column while building the matrix.
-
 ## Hexadoku
 Hexadoku puzzles use the digits 0-9,A-F in a 16x16 grid. The squares
 are 4x4. These puzzles can be found [here](http://www.hexadoku.de).
