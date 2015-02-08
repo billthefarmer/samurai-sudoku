@@ -243,7 +243,7 @@ void DancingLinks::search(int k)
 
 // Create a self referencing column using the Node constructor.
 
-Column::Column(Column *c, int n) : Node(NULL, n)
+Column::Column(Column *c, int n): Node(NULL, n)
 {
     // If the column isn't null add this one to it.
 

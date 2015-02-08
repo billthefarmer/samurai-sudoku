@@ -23,11 +23,12 @@
 
 G++    := g++
 SRC    := Samurai.cpp DancingLinks.cpp
+INC    := Samurai.h DancingLinks.h ResultListener.h
 CFLAGS := -g
 
 all:	Samurai.exe
 
-Samurai.exe:	$(SRC)
+Samurai.exe:	$(SRC) $(INC)
 
 %.exe:	%.cpp
-	$(G++) -o $@ $(CFLAGS) $^
+	$(G++) -o $@ $(CFLAGS) $(SRC)

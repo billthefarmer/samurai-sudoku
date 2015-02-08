@@ -38,7 +38,7 @@ class ResultListener;
 class DancingLinks
 {
 public:
-    ResultListener *listener;
+    ResultListener *listener = NULL;
     int stats[PUZZLE_SIZE];
     int index;
     Column *h;

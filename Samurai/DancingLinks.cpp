@@ -40,13 +40,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 static const int SAMURAI_SQUARE[][2] = 
-    {{0, -1}, {0, -1}, {0, -1}, {-1,-1}, {1, -1}, {1, -1}, {1, -1},
-     {0, -1}, {0, -1}, {0, -1}, {-1,-1}, {1, -1}, {1, -1}, {1, -1},
-     {0, -1}, {0, -1}, {0, 2},  {2, -1}, {1, 2},  {1, -1}, {1, -1},
-     {-1,-1}, {-1,-1}, {2, -1}, {2, -1}, {2, -1}, {-1,-1}, {-1,-1},
-     {3, -1}, {3, -1}, {2, 3},  {2, -1}, {2, 4},  {4, -1}, {4, -1},
-     {3, -1}, {3, -1}, {3, -1},{-1,-1},  {4, -1}, {4, -1}, {4, -1},
-     {3, -1}, {3, -1}, {3, -1},{-1,-1},  {4, -1}, {4, -1}, {4, -1}};
+    {{ 0,-1}, { 0,-1}, { 0,-1}, {-1,-1}, { 1,-1}, { 1,-1}, { 1,-1},
+     { 0,-1}, { 0,-1}, { 0,-1}, {-1,-1}, { 1,-1}, { 1,-1}, { 1,-1},
+     { 0,-1}, { 0,-1}, { 0, 2}, { 2,-1}, { 1, 2}, { 1,-1}, { 1,-1},
+     {-1,-1}, {-1,-1}, { 2,-1}, { 2,-1}, { 2,-1}, {-1,-1}, {-1,-1},
+     { 3,-1}, { 3,-1}, { 2, 3}, { 2,-1}, { 2, 4}, { 4,-1}, { 4,-1},
+     { 3,-1}, { 3,-1}, { 3,-1}, {-1,-1}, { 4,-1}, { 4,-1}, { 4,-1},
+     { 3,-1}, { 3,-1}, { 3,-1}, {-1,-1}, { 4,-1}, { 4,-1}, { 4,-1}};
 
 static const int SUDOKU_ROW[][PUZZLE_SIDE] =
     {{ 0, 1, 2, 3, 4, 5, 6, 7, 8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -61,9 +61,6 @@ static const int SUDOKU_COLUMN[][PUZZLE_SIDE] =
      {-1,-1,-1,-1,-1,-1, 0, 1, 2, 3, 4, 5, 6, 7, 8,-1,-1,-1,-1,-1,-1},
      { 0, 1, 2, 3, 4, 5, 6, 7, 8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
      {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 0, 1, 2, 3, 4, 5, 6, 7, 8}};
-
-
-///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -221,7 +218,8 @@ void DancingLinks::report(int o[PUZZLE_SIZE])
 
     // Report the result.
 
-    listener->onResult(a);
+    if (listener != NULL)
+	listener->onResult(a);
 
     // Create an array for the stats
 
@@ -232,7 +230,15 @@ void DancingLinks::report(int o[PUZZLE_SIZE])
 
     // Report stats.
 
-    listener->onResult(s);
+    if (listener != NULL)
+	listener->onResult(s);
+}
+
+// Set listener
+
+void DancingLinks::setListener(ResultListener *l)
+{
+    listener = l;
 }
 
 // Start the search process.
@@ -248,11 +254,6 @@ void DancingLinks::solve()
 
 void DancingLinks::search(int k)
 {
-    // If a result has already been found, return.
-
-    // if (stop)
-    // 	return;
-
     // If there are no more columns, report the result.
 
     if (h->r == h)
@@ -264,10 +265,9 @@ void DancingLinks::search(int k)
 	for (int i = 0; i < k; i++)
 	    a[i] = o[i]->n - 1;
 
-	// Report the result and set the stop flag.
+	// Report the result.
 
 	report(a);
-	// stop = true;
     }
 
     // Else find the shortest column and cover it.
@@ -298,11 +298,6 @@ void DancingLinks::search(int k)
 
 	for (Node *r = c->d; r != c; r = r->d)
 	{
-	    // Skip this if a result has been found.
-
-	    // if (stop)
-	    // 	break;
-
 	    // Save the row in the output array.
 
 	    o[k] = r;
@@ -346,7 +341,7 @@ Node::Node(Column *c, int n)
     this->u = this;
     this->d = this;
 
-    // Column and row number.
+    // Column type, and row number.
 
     this->c = c;
     this->n = n;
@@ -395,7 +390,7 @@ void Node::add(Node *n)
 
 // Create a self referencing column using the Node constructor.
 
-Column::Column(Column *c, int n): Node(c, n)
+Column::Column(Column *c, int n): Node(NULL, n)
 {
     if (c != NULL)
 	c->add(this);

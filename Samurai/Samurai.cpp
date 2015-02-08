@@ -141,6 +141,10 @@ void Samurai::solve(int puzzle[PUZZLE_SIDE][PUZZLE_SIDE])
 
     DancingLinks dl(puzzle);
 
+    // Set the listener
+
+    dl.setListener(this);
+
     // Print the puzzle for checking.
 
     onResult(puzzle);
