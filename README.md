@@ -31,7 +31,7 @@ like this:
 
 The slots in the four squares labelled A, B, C, D that overlap the
 centre and outer four puzzles must be solved for both puzzles. These
-puzzles acan be found [here](http://samurai-sudoku.com).
+puzzles can be found [here](http://samurai-sudoku.com).
 
 ## Hexadoku
 Hexadoku puzzles use the digits 0-9,A-F in a 16x16 grid. The squares
